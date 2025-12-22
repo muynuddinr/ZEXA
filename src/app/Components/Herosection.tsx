@@ -1,90 +1,79 @@
 'use client';
 
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, Zap, Rocket, Target } from 'lucide-react';
 import Link from 'next/link';
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen bg-white pt-20 flex items-center justify-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-8">
-            {/* Badge */}
-            <div className="inline-flex items-center space-x-2 bg-[#08b48d]/10 rounded-full px-4 py-2 border border-[#08b48d]/30">
-              <Sparkles className="w-4 h-4 text-[#08b48d]" />
-              <span className="text-sm font-medium text-[#08b48d]">Welcome to ZEXO Agency</span>
-            </div>
+    <section className="min-h-screen bg-black pt-20 flex items-center justify-center relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-0 right-0 w-150 h-150 bg-linear-to-br from-[#08b48d]/30 via-purple-600/20 to-transparent rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 left-0 w-150 h-150 bg-linear-to-tr from-[#08b48d]/20 via-blue-600/10 to-transparent rounded-full blur-3xl -z-10"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-black via-transparent to-black pointer-events-none -z-10"></div>
 
-            {/* Heading */}
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Transform Your Digital
-                <span className="block bg-gradient-to-r from-[#08b48d] to-[#08b48d] bg-clip-text text-transparent">
-                  Presence
-                </span>
-              </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
-                We create stunning digital experiences that drive growth and engagement. From web design to full-stack development, we've got you covered.
-              </p>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-[#08b48d] to-[#08b48d] text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-[#08b48d]/40 transform hover:scale-105 transition-all duration-300 group">
-                Get Started Now
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="inline-flex items-center justify-center px-8 py-3 border-2 border-[#08b48d] text-[#08b48d] font-semibold rounded-lg hover:bg-[#08b48d]/5 transition-all duration-300">
-                View Our Work
-              </button>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
-              <div>
-                <p className="text-3xl font-bold text-gray-900">50+</p>
-                <p className="text-sm text-gray-600 mt-1">Projects Completed</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-gray-900">40+</p>
-                <p className="text-sm text-gray-600 mt-1">Happy Clients</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-gray-900">5+</p>
-                <p className="text-sm text-gray-600 mt-1">Years Experience</p>
-              </div>
-            </div>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        {/* Main Content */}
+        <div className="text-center space-y-8 mb-16">
+          {/* Badge */}
+          <div className="inline-flex items-center space-x-2 bg-[#08b48d]/15 rounded-full px-4 py-2 border border-[#08b48d]/50 backdrop-blur-sm hover:bg-[#08b48d]/25 transition-all duration-300">
+            <Sparkles className="w-4 h-4 text-[#08b48d]" />
+            <span className="text-sm font-medium text-[#08b48d]">Welcome to ZEXO Agency</span>
           </div>
 
-          {/* Right Visual */}
-          <div className="relative h-96 lg:h-[500px] hidden lg:block">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#08b48d]/20 to-[#08b48d]/5 rounded-3xl"></div>
-            
-            {/* Floating cards */}
-            <div className="absolute top-10 right-10 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 max-w-xs transform hover:scale-105 transition-transform">
-              <div className="flex items-center space-x-3 mb-2">
-                <div className="w-3 h-3 bg-[#08b48d] rounded-full"></div>
-                <p className="text-sm font-semibold text-gray-900">Design</p>
-              </div>
-              <p className="text-xs text-gray-600">Beautiful & responsive UI/UX design</p>
-            </div>
+          {/* Heading */}
+          <div className="space-y-4">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+              Build Your Digital
+              <br />
+              <span className="bg-linear-to-r from-[#08b48d] to-[#00d4aa] bg-clip-text text-transparent">Future Today</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+              We create innovative digital solutions that transform your vision into reality. From concept to launch, we're with you every step.
+            </p>
+          </div>
 
-            <div className="absolute bottom-20 left-10 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 max-w-xs transform hover:scale-105 transition-transform delay-100">
-              <div className="flex items-center space-x-3 mb-2">
-                <div className="w-3 h-3 bg-[#08b48d] rounded-full"></div>
-                <p className="text-sm font-semibold text-gray-900">Development</p>
-              </div>
-              <p className="text-xs text-gray-600">Fast, scalable & secure solutions</p>
-            </div>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+            <button className="inline-flex items-center justify-center px-8 py-4 bg-linear-to-r from-[#08b48d] to-[#00d4aa] text-black font-semibold rounded-lg hover:shadow-2xl hover:shadow-[#08b48d]/50 transform hover:scale-105 transition-all duration-300 group">
+              Start Your Project
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <button className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#08b48d]/60 text-[#08b48d] font-semibold rounded-lg hover:bg-[#08b48d]/10 hover:border-[#08b48d] backdrop-blur-sm transition-all duration-300">
+              Explore Our Work
+            </button>
+          </div>
+        </div>
 
-            <div className="absolute bottom-10 right-20 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 max-w-xs transform hover:scale-105 transition-transform delay-200">
-              <div className="flex items-center space-x-3 mb-2">
-                <div className="w-3 h-3 bg-[#08b48d] rounded-full"></div>
-                <p className="text-sm font-semibold text-gray-900">Strategy</p>
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12 border-t border-gray-700/50">
+          <div className="text-center space-y-3 p-6 rounded-lg backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-all duration-300">
+            <div className="flex justify-center">
+              <div className="p-3 bg-[#08b48d]/20 rounded-full">
+                <Zap className="w-6 h-6 text-[#08b48d]" />
               </div>
-              <p className="text-xs text-gray-600">Data-driven digital strategies</p>
             </div>
+            <h3 className="text-lg font-semibold text-white">Fast & Reliable</h3>
+            <p className="text-sm text-gray-400">Lightning-quick delivery without compromising quality</p>
+          </div>
+
+          <div className="text-center space-y-3 p-6 rounded-lg backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-all duration-300">
+            <div className="flex justify-center">
+              <div className="p-3 bg-[#08b48d]/20 rounded-full">
+                <Rocket className="w-6 h-6 text-[#08b48d]" />
+              </div>
+            </div>
+            <h3 className="text-lg font-semibold text-white">Scalable Solutions</h3>
+            <p className="text-sm text-gray-400">Growing businesses need growing digital infrastructure</p>
+          </div>
+
+          <div className="text-center space-y-3 p-6 rounded-lg backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-all duration-300">
+            <div className="flex justify-center">
+              <div className="p-3 bg-[#08b48d]/20 rounded-full">
+                <Target className="w-6 h-6 text-[#08b48d]" />
+              </div>
+            </div>
+            <h3 className="text-lg font-semibold text-white">Results Driven</h3>
+            <p className="text-sm text-gray-400">Every project designed to deliver measurable impact</p>
           </div>
         </div>
       </div>
