@@ -16,10 +16,10 @@ export default function Loader() {
   if (!isLoading) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-white overflow-hidden w-screen h-screen">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black overflow-hidden w-screen h-screen">
       {/* Simple background glow */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-gradient-to-r from-teal-400/30 via-teal-300/20 to-teal-400/30 rounded-full mix-blend-multiply filter blur-3xl" style={{ willChange: 'transform' }}></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-gradient-to-r from-[#08b48d]/30 via-[#08b48d]/20 to-[#08b48d]/30 rounded-full mix-blend-multiply filter blur-3xl" style={{ willChange: 'transform' }}></div>
       </div>
 
       {/* Main zoom animation container */}
@@ -27,7 +27,7 @@ export default function Loader() {
         {/* ZEXO text */}
         <div className="absolute animate-zoom-expand" style={{ willChange: 'transform, opacity' }}>
           <h1 className="text-[4rem] md:text-[7rem] font-black text-center leading-none" style={{ color: '#08b48d' }}>
-            ZƎXO
+            ZEXO
           </h1>
         </div>
 
@@ -40,7 +40,7 @@ export default function Loader() {
       </div>
 
       {/* Fade overlay */}
-      <div className="fixed inset-0 pointer-events-none animate-fade-out-simple opacity-20 bg-gradient-to-b from-teal-400/10 via-transparent to-teal-400/10"></div>
+      <div className="fixed inset-0 pointer-events-none animate-fade-out-simple opacity-20 bg-gradient-to-b from-[#08b48d]/10 via-transparent to-[#08b48d]/10"></div>
 
       <style jsx>{`
         @keyframes zoom-expand {
