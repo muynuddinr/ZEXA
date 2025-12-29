@@ -82,18 +82,18 @@ const Services2: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-20 px-4 md:px-8 lg:px-16 bg-black relative overflow-hidden">
+    <section className="py-20 px-4 md:px-8 lg:px-16 bg-gray-100 dark:bg-black relative overflow-hidden transition-colors duration-300">
       {/* Background effects */}
       <div className="absolute top-0 right-0 w-150 h-150 bg-linear-to-bl from-[#08b48d]/15 to-transparent rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-0 left-0 w-150 h-150 bg-linear-to-tr from-[#08b48d]/10 to-transparent rounded-full blur-3xl -z-10"></div>
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
             Our
             <span className="block text-[#08b48d]">Services</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Promptly providing creative solutions that drive business growth
           </p>
         </div>
@@ -112,7 +112,7 @@ const Services2: React.FC = () => {
                   : 'opacity-0 translate-x-96'
               }`}
             >
-              <div className="group p-8 md:p-10 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#08b48d]/50 hover:shadow-2xl hover:shadow-[#08b48d]/20 transition-all duration-300 relative overflow-hidden">
+              <div className="group p-8 md:p-10 rounded-2xl bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-gray-300 dark:border-white/10 hover:border-[#08b48d]/50 hover:shadow-2xl hover:shadow-[#08b48d]/20 transition-all duration-300 relative overflow-hidden">
                 {/* Background gradient on hover */}
                 <div className="absolute inset-0 bg-linear-to-r from-[#08b48d]/0 to-[#08b48d]/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
 
@@ -131,11 +131,11 @@ const Services2: React.FC = () => {
                       <div className="text-lg font-bold text-[#08b48d]">
                         {String(service.id).padStart(2, '0')}
                       </div>
-                      <h3 className="text-3xl md:text-4xl font-bold text-white">
+                      <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
                         {service.title}
                       </h3>
                     </div>
-                    <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                    <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
                       {service.description}
                     </p>
 
@@ -154,8 +154,8 @@ const Services2: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center pt-12 border-t border-white/10">
-          <p className="text-gray-300 text-lg mb-6">
+        <div className="text-center pt-12 border-t border-gray-300 dark:border-white/10">
+          <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">
             Ready to transform your business with our services?
           </p>
           <Link href="/contact">

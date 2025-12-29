@@ -21,7 +21,7 @@ interface StickyImageProps {
 
 const TextParallaxContentExample = () => {
   return (
-    <div className="bg-black">
+    <div className="bg-white dark:bg-black transition-colors duration-300">
       <TextParallaxContent
         imgUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         subheading="Our Services"
@@ -92,7 +92,7 @@ const StickyImage = ({ imgUrl }: StickyImageProps) => {
       className="sticky z-0 overflow-hidden rounded-3xl"
     >
       <motion.div
-        className="absolute inset-0 bg-neutral-950/70"
+        className="absolute inset-0 bg-neutral-950/70 dark:bg-neutral-950/70"
         style={{
           opacity,
         }}
@@ -120,31 +120,31 @@ const OverlayCopy = ({ subheading, heading }: OverlayCopyProps) => {
       ref={targetRef}
       className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white"
     >
-      <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">
+      <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl text-white">
         {subheading}
       </p>
-      <p className="text-center text-4xl font-bold md:text-7xl">{heading}</p>
+      <p className="text-center text-4xl font-bold md:text-7xl text-white">{heading}</p>
     </motion.div>
   );
 };
 
 const ExampleContent = () => (
-  <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12 bg-black">
-    <h2 className="col-span-1 text-3xl font-bold md:col-span-4 text-white">
+  <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12 bg-gray-50 dark:bg-black transition-colors duration-300">
+    <h2 className="col-span-1 text-3xl font-bold md:col-span-4 text-gray-900 dark:text-white">
       Additional content explaining the above card here
     </h2>
     <div className="col-span-1 md:col-span-8">
-      <p className="mb-4 text-xl text-gray-300 md:text-2xl">
+      <p className="mb-4 text-xl text-gray-600 dark:text-gray-300 md:text-2xl">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
         blanditiis soluta eius quam modi aliquam quaerat odit deleniti minima
         maiores voluptate est ut saepe accusantium maxime doloremque nulla
         consectetur possimus.
       </p>
-      <p className="mb-8 text-xl text-gray-300 md:text-2xl">
+      <p className="mb-8 text-xl text-gray-600 dark:text-gray-300 md:text-2xl transition-colors duration-300">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
         reiciendis blanditiis aliquam aut fugit sint.
       </p>
-      <button className="w-full rounded bg-[#08b48d] px-9 py-4 text-xl text-white transition-colors hover:bg-[#07a578] md:w-fit">
+      <button className="w-full rounded bg-[#08b48d] px-9 py-4 text-xl text-gray-900 dark:text-white font-semibold transition-colors hover:bg-[#07a578] md:w-fit">
         Learn more <FiArrowUpRight className="inline" />
       </button>
     </div>

@@ -10,7 +10,7 @@ interface CardProps {
 
 const Example = () => {
   return (
-    <div className="bg-black">
+    <div className="bg-gray-100 dark:bg-black transition-colors duration-300">
       <HorizontalScrollCarousel />
     </div>
   );
@@ -25,7 +25,7 @@ const HorizontalScrollCarousel = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-black">
+    <section ref={targetRef} className="relative h-[300vh] bg-gray-100 dark:bg-black transition-colors duration-300">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-4">
           {cards.map((card) => {
@@ -41,7 +41,7 @@ const Card = ({ card }: { card: CardProps }) => {
   return (
     <div
       key={card.id}
-      className="group relative h-[450px] w-[450px] overflow-hidden bg-neutral-800"
+      className="group relative h-[450px] w-[450px] overflow-hidden bg-gray-300 dark:bg-neutral-800 transition-colors duration-300"
     >
       <div
         style={{
@@ -52,7 +52,7 @@ const Card = ({ card }: { card: CardProps }) => {
         className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
       ></div>
       <div className="absolute inset-0 z-10 grid place-content-center">
-        <p className="bg-gradient-to-br from-[#08b48d]/20 to-[#08b48d]/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
+        <p className="bg-gradient-to-br from-[#08b48d]/20 to-[#08b48d]/0 p-8 text-6xl font-black uppercase text-black dark:text-white backdrop-blur-lg transition-colors duration-300">
           {card.title}
         </p>
       </div>

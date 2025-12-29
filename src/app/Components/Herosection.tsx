@@ -20,7 +20,7 @@ interface ParallaxImgProps {
 
 export default function HeroSection() {
   return (
-    <div className="bg-black">
+    <div className="bg-white dark:bg-black transition-colors duration-300">
       <ReactLenis
         root
         options={{
@@ -48,7 +48,7 @@ const Hero = () => {
 
       <ParallaxImages />
 
-      <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-black/0 to-black" />
+      <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-white/0 to-white dark:from-black/0 dark:to-black transition-colors duration-300" />
     </div>
   );
 };
@@ -152,13 +152,13 @@ const Schedule = () => {
   return (
     <section
       id="launch-schedule"
-      className="mx-auto max-w-5xl px-4 py-48 text-white"
+      className="mx-auto max-w-5xl px-4 py-48 text-gray-900 dark:text-white transition-colors duration-300"
     >
       <motion.h1
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
-        className="mb-20 text-4xl font-black uppercase text-zinc-50"
+        className="mb-20 text-4xl font-black uppercase text-gray-900 dark:text-zinc-50 transition-colors duration-300"
       >
         Your Content Here
       </motion.h1>
