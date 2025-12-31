@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { SERVICES } from '@/lib/services';
 
 const Footer: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              ZEXO<span className="bg-gradient-to-r from-[#08b48d] to-[#00d4aa] bg-clip-text text-transparent">Agency</span>
+              ZEXO<span className="bg-gradient-to-r from-[#08b48d] to-[#00d4aa] bg-clip-text text-transparent"> Agency</span>
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md">
               We create innovative digital solutions that drive growth and transform businesses.
@@ -72,34 +73,16 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Services */}
-          <div>
+          <div className="lg:col-span-1">
             <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 transition-colors duration-300">Services</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/services/web-development" className="text-gray-600 dark:text-gray-400 hover:text-[#08b48d] transition-colors duration-300">
-                  Web Development
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/mobile-apps" className="text-gray-600 dark:text-gray-400 hover:text-[#08b48d] transition-colors duration-300">
-                  Mobile Apps
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/ai-ml" className="text-gray-600 dark:text-gray-400 hover:text-[#08b48d] transition-colors duration-300">
-                  AI & ML
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/digital-marketing" className="text-gray-600 dark:text-gray-400 hover:text-[#08b48d] transition-colors duration-300">
-                  Digital Marketing
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/consulting" className="text-gray-600 dark:text-gray-400 hover:text-[#08b48d] transition-colors duration-300">
-                  Consulting
-                </Link>
-              </li>
+            <ul className="space-y-2 text-sm">
+              {SERVICES.map((service) => (
+                <li key={service.id}>
+                  <Link href={`/services`} className="text-gray-600 dark:text-gray-400 hover:text-[#08b48d] transition-colors duration-300">
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -111,21 +94,21 @@ const Footer: React.FC = () => {
               <Mail className="w-5 h-5 text-[#08b48d]" />
               <div>
                 <p className="text-gray-900 dark:text-white font-medium transition-colors duration-300">Email</p>
-                <p className="text-gray-600 dark:text-gray-400 transition-colors duration-300">hello@ZEXOagency.com</p>
+                <p className="text-gray-600 dark:text-gray-400 transition-colors duration-300">info@zexoagency.com</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <Phone className="w-5 h-5 text-[#08b48d]" />
               <div>
                 <p className="text-gray-900 dark:text-white font-medium transition-colors duration-300">Phone</p>
-                <p className="text-gray-600 dark:text-gray-400 transition-colors duration-300">+1 (555) 123-4567</p>
+                <p className="text-gray-600 dark:text-gray-400 transition-colors duration-300">+91 6374800657</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <MapPin className="w-5 h-5 text-[#08b48d]" />
               <div>
                 <p className="text-gray-900 dark:text-white font-medium transition-colors duration-300">Location</p>
-                <p className="text-gray-600 dark:text-gray-400 transition-colors duration-300">San Francisco, CA</p>
+                <p className="text-gray-600 dark:text-gray-400 transition-colors duration-300">2nd Floor, GM Narayana Reddy Layout, Konappana Agrahara, Electronic City, Bangalore-100</p>
               </div>
             </div>
           </div>

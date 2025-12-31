@@ -1,7 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect, useCallback } from 'react';
+import { usePathname } from 'next/navigation';
+// Import your logo here
+import logo from '../../../public/logo.png';
 
 const TEAL = '#08b48d';
 const TEAL_LIGHT = '#00d4aa';
@@ -22,6 +26,21 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState('dark');
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const pathname = usePathname();
+
+  // Map pathname to nav link name
+  const getActiveLink = (path: string) => {
+    if (path === '/') return 'Home';
+    if (path === '/services') return 'Services';
+    if (path === '/about') return 'About';
+    if (path === '/contact') return 'Contact';
+    return 'Home';
+  };
+
+  useEffect(() => {
+    // Update active link based on current pathname
+    setActive(getActiveLink(pathname));
+  }, [pathname]);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -43,10 +62,13 @@ export default function Navbar() {
     };
   }, []);
 
-  const handleNavClick = useCallback((name: string) => {
-    setActive(name);
+  const handleNavClick = useCallback((name: string, href: string) => {
     if (isMobile) setOpen(false);
-  }, [isMobile]);
+    // Prevent navigation if already on the same page
+    if (pathname === href) {
+      return false;
+    }
+  }, [isMobile, pathname]);
 
   const applyTheme = (themeName: string) => {
     const html = document.documentElement;
@@ -78,16 +100,17 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between">
           {/* Logo Section */}
-          <Link href="#" className="flex items-center gap-3 group">
-            <div className="relative">
-              <div className="w-10 h-10 md:w-11 md:h-11 bg-gradient-to-br from-teal-500 to-cyan-400 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-1000 ease-in-out shadow-lg shadow-teal-500/40">
-                <span className="text-gray-900 dark:text-slate-900 font-bold text-lg transition-colors duration-300">Z</span>
-              </div>
-              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-40 bg-teal-400 blur-lg transition-opacity duration-1000 ease-in-out" />
-            </div>
+          <Link href="/" className="flex items-center gap-3 group">
+            {/* Add your logo image here - uncomment and update the import above */}
+            <Image 
+              src={logo} 
+              alt="Logo" 
+              width={40} 
+              height={40}
+              className="transition-all duration-1000 ease-in-out group-hover:scale-110"
+            />
             <span className="hidden sm:flex flex-col">
-              <span className="font-black text-base md:text-lg leading-none text-gray-900 dark:text-white">ZEXO</span>
-              <span className="text-xs text-teal-400 font-semibold tracking-wide">Creative Agency</span>
+              <span className="font-black text-base md:text-lg leading-none text-gray-900 dark:text-white">ZEXO <span style={{ color: TEAL }}>Agency</span></span>
             </span>
           </Link>
 
@@ -98,7 +121,12 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  onClick={() => handleNavClick(link.name)}
+                  onClick={(e) => {
+                    if (pathname === link.href) {
+                      e.preventDefault();
+                    }
+                    handleNavClick(link.name, link.href);
+                  }}
                   onMouseEnter={() => setHoveredLink(link.name)}
                   onMouseLeave={() => setHoveredLink(null)}
                   className="relative px-4 py-2 text-sm font-medium transition-all duration-1000 ease-in-out group"
@@ -202,7 +230,12 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                onClick={() => handleNavClick(link.name)}
+                onClick={(e) => {
+                  if (pathname === link.href) {
+                    e.preventDefault();
+                  }
+                  handleNavClick(link.name, link.href);
+                }}
                 className="px-4 py-3 rounded-lg text-center font-semibold transition-all duration-1000 ease-in-out hover:bg-gray-100 dark:hover:bg-slate-800/40"
                 style={{
                   color: active === link.name ? TEAL : theme === 'light' ? '#374151' : LIGHT_TEXT,

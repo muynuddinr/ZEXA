@@ -115,7 +115,7 @@ export default function ContactPage() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all outline-none"
-                  placeholder="+1 (234) 567-8900"
+                  placeholder="+91 6374800657"
                 />
               </div>
 
@@ -186,9 +186,11 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Email</h3>
-                  <a href="mailto:hello@zexo.agency" className="text-teal-500 hover:text-teal-400 transition-colors">
-                    hello@zexo.agency
-                  </a>
+                  <div className="space-y-1">
+                    <a href="mailto:info@zexoagency.com" className="text-teal-500 hover:text-teal-400 transition-colors block">
+                      info@zexoagency.com
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -201,8 +203,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Phone</h3>
-                  <a href="tel:+1234567890" className="text-teal-500 hover:text-teal-400 transition-colors">
-                    +1 (234) 567-8900
+                  <a href="tel:+916374800657" className="text-teal-500 hover:text-teal-400 transition-colors">
+                    +91 6374800657
                   </a>
                 </div>
               </div>
@@ -218,8 +220,9 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Location</h3>
                   <p className="text-gray-600 dark:text-slate-400">
-                    123 Creative Street<br />
-                    San Francisco, CA 94102
+                    2nd Floor, GM Narayana Reddy Layout<br />
+                    Konappana Agrahara, Electronic City<br />
+                    Bangalore-100
                   </p>
                 </div>
               </div>
